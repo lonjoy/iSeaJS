@@ -1,7 +1,7 @@
-define("gallery/backbone/0.9.9/backbone-debug", [ "gallery/underscore/1.4.2/underscore-debug", "$-debug" ], function(require, exports) {
+define("gallery/backbone/0.9.9/backbone-debug", [ "gallery/underscore/1.4.3/underscore-debug", "$-debug" ], function(require, exports) {
     var previousUnderscore = this._;
     var previousJQuery = this.jQuery;
-    this._ = require("gallery/underscore/1.4.2/underscore-debug");
+    this._ = require("gallery/underscore/1.4.3/underscore-debug");
     this.jQuery = require("$-debug");
     //     Backbone.js 0.9.9
     //     (c) 2010-2012 Jeremy Ashkenas, DocumentCloud Inc.
@@ -34,7 +34,7 @@ define("gallery/backbone/0.9.9/backbone-debug", [ "gallery/underscore/1.4.2/unde
         Backbone.VERSION = "0.9.9";
         // Require Underscore, if we're on the server, and it's not already present.
         var _ = root._;
-        if (!_ && typeof require !== "undefined") _ = require("gallery/underscore/1.4.2/underscore-debug");
+        if (!_ && typeof require !== "undefined") _ = require("gallery/underscore/1.4.3/underscore-debug");
         // For Backbone's purposes, jQuery, Zepto, or Ender owns the `$` variable.
         Backbone.$ = root.jQuery || root.Zepto || root.ender;
         // Runs Backbone.js in *noConflict* mode, returning the `Backbone` variable

@@ -33,7 +33,7 @@ seajs.config({
 	    ,"uploadpic": "arale/uploadpic/1.0.0/uploadpic"
 	    
 	    // gallery
-	    ,"jquery": "gallery/jquery/1.8.3/jquery"
+	    ,"$": "gallery/jquery/1.8.3/jquery"
 	    ,"backbone": "gallery/backbone/0.9.9/backbone"
 	    ,"mustache": "gallery/mustache/0.7.0/mustache"
 	    ,"store": "gallery/store/1.3.6/store"
@@ -46,7 +46,7 @@ seajs.config({
 	    ,"iscroll": "gallery/iscroll/4.2.5/iscroll"
 	    ,"less": "gallery/less/1.3.1/less"
 	    ,"zepto": "gallery/zepto/1.0.1/zepto"
-	    ,"underscore": "gallery/underscore/1.4.4/underscore"
+	    ,"underscore": "gallery/underscore/1.4.3/underscore"
 	    ,"keymaster": "gallery/keymaster/1.0.2/keymaster"
 	    ,"swfobject": "gallery/swfobject/2.3.0/swfobject"
 	    ,"jquery-color": "gallery/jquery-color/2.1.1/jquery-color"
@@ -69,6 +69,6 @@ seajs.config({
 	// 使用 preload 配置项，可以在普通模块加载前，提前加载并初始化好指定模块。
 	,preload : [
 		this.JSON ? '' : 'json'
-		,this.jquery ? '' : 'jquery'
+		,this.jQuery ? '' : '$'
 	]
 });
