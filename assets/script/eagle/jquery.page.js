@@ -39,7 +39,7 @@ var tPage;
 		this.$skip = $('<span class="page-skip"></span>');
 		//this.$skipForm = $('<form>');
 		this.$skipWords = $('<em>').text(options.pageCount);
-		this.$skipInput = $('<input type="text" title="输入页码" value="" />');
+		this.$skipInput = $('<input type="text" title="输入页码" value="1" />');
 		this.$skipSubmit = $('<button title="指定页码" type="submit">确定</button>');
 		this.$skip.append('共', this.$skipWords, '页到第', this.$skipInput, '页', this.$skipSubmit);
 		//this.$skip.append(this.$skipForm);
@@ -60,7 +60,7 @@ var tPage;
 							plugin.go(pageto);
 						});
 		this.$skipInput.unbind('.page')
-						.bind('propertychange.page input.page keydown.page', function(){
+						.bind('input.page keydown.page', function(){
 							this.value = this.value.replace(/[^\d.]/g,"");
 						});
 	};
@@ -78,6 +78,7 @@ var tPage;
 		if($.isFunction(this.options.pageEvent) && this.options.pageEventInit){
 			this.options.pageEvent.call(this);
 		}
+		return false;
 	};
 	
 	// 重置'显示/隐藏'与'禁用/激活'按钮
@@ -133,13 +134,14 @@ var tPage;
 		}		
 		var contentHTML = contentArray.join('\n');
 		this.$content.html(contentHTML);
+		var tmpcur = cur;
 		if(cur == count){
 			this.$next.addClass('next-no');
-			this.$skipInput[0].value = cur;
 		}else{
 			this.$next.attr(options.pageAttr, (cur+1));
-			this.$skipInput[0].value = (cur+1);
-		}			
+			tmpcur += 1;
+		}
+		this.$skipInput.val(tmpcur);
 	};
 	
 	// jQuery插件形式，快捷调用
